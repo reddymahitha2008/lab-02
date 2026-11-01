@@ -1,0 +1,197 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Lab 02 - SQLite Database and CRUD Routes",
+    "description": "Postman API Collection for Lab 2: SQLite Database and CRUD Routes.\nStudent: Reddy Mahitha\nReg No: 252U1R3079\nSection: CSE-DS-2B",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. GET All Books",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        },
+        "description": "Retrieves all book records from SQLite database table 'book'. Expects 200 OK."
+      },
+      "response": []
+    },
+    {
+      "name": "2. GET Book by ID (ID: 1)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/books/1/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "1", ""]
+        },
+        "description": "Retrieves single book with id = 1 using parameterized query. Expects 200 OK."
+      },
+      "response": []
+    },
+    {
+      "name": "3. POST Add New Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Learning Node.js\",\n  \"author\": \"John Smith\",\n  \"price\": 450,\n  \"pages\": 320\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        },
+        "description": "Inserts a new book record into SQLite using parameterized query. Expects 201 Created."
+      },
+      "response": []
+    },
+    {
+      "name": "4. PUT Update Book (ID: 1)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Advanced Node.js\",\n  \"author\": \"John Smith\",\n  \"price\": 550,\n  \"pages\": 400\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/1/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "1", ""]
+        },
+        "description": "Updates an existing book record in SQLite. Expects 200 OK."
+      },
+      "response": []
+    },
+    {
+      "name": "5. DELETE Book by ID (ID: 1)",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/books/1/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "1", ""]
+        },
+        "description": "Deletes book with id = 1 from SQLite. Expects 200 OK."
+      },
+      "response": []
+    },
+    {
+      "name": "6. GET Non-Existent Book (404 Error Test)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/books/9999/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "9999", ""]
+        },
+        "description": "Attempts to fetch a non-existent book ID. Expects 404 Not Found."
+      },
+      "response": []
+    },
+    {
+      "name": "7. GET Invalid ID Format (400 Error Test)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/books/invalid-id/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "invalid-id", ""]
+        },
+        "description": "Attempts to pass non-numeric bookId. Expects 400 Bad Request."
+      },
+      "response": []
+    },
+    {
+      "name": "8. POST Validation Failure - Missing Fields (400 Error Test)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Only Title Provided\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        },
+        "description": "Attempts to add a book with missing required fields. Expects 400 Bad Request."
+      },
+      "response": []
+    }
+  ]
+}
+
