@@ -125,3 +125,4 @@ if (scenario === 'all') {
   console.log('  node broken-server.js 3  -> SQLITE_ERROR no such table demo');
   console.log('  node broken-server.js 4  -> Missing await demo');
 }
+

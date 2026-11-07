@@ -30,3 +30,4 @@ INSERT INTO book (title, author, price, pages) VALUES
 -- Verification queries:
 -- SELECT * FROM book;
 -- SELECT COUNT(*) FROM book;
+

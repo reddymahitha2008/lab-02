@@ -272,3 +272,4 @@ app.get('/books', async (req, res) => {
 | **`MODULE_NOT_FOUND`** | Path typo or missing `npm install` | Check filename spelling or run `npm install <package>` |
 | **`no such table`** | Singular vs plural mismatch in SQL query | Match table name with `CREATE TABLE` definition (`book`) |
 | **`db.all is not a function`** | Missing `await` before `open(...)` | Add `await` before asynchronous DB operations |
+
