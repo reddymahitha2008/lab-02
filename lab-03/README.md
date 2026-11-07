@@ -1,6 +1,6 @@
 # Lab 03: REST API, Query Parameters, Validation and Debugging
 
-> **Live Deployment:** Not deployed. Local SQLite file-based persistence is not natively retained across ephemeral container restarts without persistent volume attachments on platforms such as Render or Railway.
+> **Live Deployment:https://lab-03-restapi.onrender.com
 
 ---
 
