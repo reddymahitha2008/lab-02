@@ -1,0 +1,23 @@
+services:
+  # Lab 03 Service
+  - type: web
+    name: lab-03-rest-api
+    env: node
+    plan: free
+    rootDir: lab-03
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+
+  # Lab 02 Service
+  - type: web
+    name: lab-02-sqlite-crud
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
