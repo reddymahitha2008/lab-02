@@ -134,6 +134,9 @@ npm run verify-db
 
 ## 🧪 Postman Testing Guide (Step-by-Step)
 
+> [!TIP]
+> **One-Click Postman Import:** You can import [`postman/Lab-04-API-Collection.json`](postman/Lab-04-API-Collection.json) directly into Postman by clicking **Import** -> Select `Lab-04-API-Collection.json`. All 6 endpoints and sample payloads will be loaded automatically!
+
 Follow these exact steps in Postman to test every scenario:
 
 ### Test 1: Successful User Registration
