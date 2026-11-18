@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "4b6e8f1a-9a02-4c28-98e3-0d5b78b04a91",
+    "name": "Lab 04 - Registration, Login & JWT Authentication",
+    "description": "Postman collection for Lab 4 backend authentication testing. Student: Reddy Mahitha (252U1R3079)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Register - Success",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"mahitha\",\n  \"name\": \"Mahitha\",\n  \"password\": \"mahitha123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/register/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["register", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Register - Duplicate User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"mahitha\",\n  \"name\": \"Mahitha\",\n  \"password\": \"mahitha123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/register/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["register", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Login - Success (Generates JWT)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"mahitha\",\n  \"password\": \"mahitha123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/login/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["login", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Login - Unknown User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"unknown_user\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/login/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["login", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Login - Incorrect Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"mahitha\",\n  \"password\": \"wrongpassword\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/login/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["login", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Register - Missing Fields",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"mahitha\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/register/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["register", ""]
+        }
+      },
+      "response": []
+    }
+  ]
+}
